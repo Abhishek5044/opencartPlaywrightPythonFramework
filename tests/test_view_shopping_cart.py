@@ -16,7 +16,7 @@ def test_view_shopping_cart(page):
     product_quantity = configpage.product_quantity
 
     homepage.enter_product_name(product_name)
-    homepage.click_search_btton()
+    homepage.click_search()
 
     title = searchpage.get_search_results_page_header()
     expect(title).to_be_visible(timeout=3000)

@@ -1,0 +1,9 @@
+[OK] Starting browser: chromium
+[OK] Headless mode: False (headed=True)
+[INFO] Navigating to: https://tutorialsninja.com/demo/
+[TRACE] Tracing enabled - capturing screenshots and actions
+Total products ==> 3
+Total shopping price ===>  <Locator frame=<Frame name= url='https://tutorialsninja.com/demo/index.php?route=checkout/cart'> selector="//*[@id='content']/div[2]/div/table//strong[text()='Total:']//following::td">
+[RESULT] Test 'test_view_shopping_cart' result: [PASS]
+[SAVE] Trace saved: reports/traces/test_view_shopping_cart_trace.zip
+[CLEANUP] Closing browser context and stopping Playwright...

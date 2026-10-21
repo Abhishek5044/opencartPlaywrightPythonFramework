@@ -1,4 +1,4 @@
-#Contains resusable fixtures and to attach screenshots
+#Contains resusable fixtures used in multiple tests and to attach screenshots, 
 
 import pytest
 import allure

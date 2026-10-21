@@ -29,7 +29,7 @@ from pages.my_account_page import MyAccountPage
 from config import Config
 
 
-@pytest.mark.regression
+
 def test_user_logout(page):
     """
     Automated Test Case: Verify that a logged-in user can successfully log out of the application.
@@ -46,8 +46,8 @@ def test_user_logout(page):
 
     # --- Step 3: Enter Valid Credentials and Login ---
     login_page.set_email(Config.email)
-    login_page.set_password(Config.password)
-    login_page.click_login()
+    login_page.set_login_password(Config.password)
+    login_page.click_login_button()
 
     # --- Step 4: Verify 'My Account' Page is Displayed ---
     expect(my_account_page.get_my_account_page_heading()).to_be_visible(timeout=3000)

@@ -1,3 +1,5 @@
+#creates random data at runtime.
+
 from faker import Faker
 import random
 import string
@@ -52,3 +54,11 @@ class RandomDataUtil:
 
     def get_random_uuid(self):
         return str(self.faker.uuid4())
+
+    def  get_random_street_name(self):
+        return self.faker.street_name()
+
+    def get_registration_number(self, length=10):   
+        return self.faker.bothify(text="??########")
+
+        

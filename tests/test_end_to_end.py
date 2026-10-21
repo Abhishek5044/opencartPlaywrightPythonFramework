@@ -1,6 +1,6 @@
 import pytest
 from pages.home_page import HomePage
-from pages.registration_page import ResgisrationPage
+from pages.registration_page import RegistrationPage
 from pages.login_page import LoginPage
 from pages.my_account_page import MyAccountPage
 from pages.logout_page import LogoutPage
@@ -49,10 +49,10 @@ def test_end_to_end_flow(page):
 # -------------------------------------------------------------
 def perform_registration(page):
     home_page = HomePage(page)
-    registration_page = ResgisrationPage(page)
+    registration_page = RegistrationPage(page)
 
-    home_page.click_my_account_link()
-    home_page.click_register_link()
+    home_page.click_my_account()
+    home_page.click_register()
 
     # Fill registration form with random data
     random_data = RandomDataUtil()
@@ -69,11 +69,11 @@ def perform_registration(page):
     registration_page.set_telephone(phone)
     registration_page.set_password(password)
     registration_page.set_confirm_password(password)
-    registration_page.check_privacy_policy()
-    registration_page.click_continue_btton()
+    registration_page.set_privacy_policy()
+    registration_page.click_continue()
 
     # Validate confirmation message
-    confirmation_msg = registration_page.get_confirm_messgae()
+    confirmation_msg = registration_page.get_confirmation_msg()
     expect(confirmation_msg).to_have_text("Your Account Has Been Created!")
 
     return email,password
@@ -99,8 +99,8 @@ def perform_logout(page):
 def perform_login(page, email,password):
 
     home = HomePage(page)
-    home.click_my_account_link()
-    home.click_login_link()
+    home.click_my_account()
+    home.click_login()
 
     login = LoginPage(page)
     login.login(email, password)
@@ -127,7 +127,7 @@ def add_product_to_cart(page):
 
     #  Enter product name and click Search
     home_page.enter_product_name(product_name)
-    home_page.click_search_btton()
+    home_page.click_search()
 
     # Verify that the search results page is displayed
     expect(search_results_page.get_search_results_page_header()).to_be_visible(timeout=3000)
